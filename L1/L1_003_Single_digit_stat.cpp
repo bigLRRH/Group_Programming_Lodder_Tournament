@@ -8,9 +8,7 @@ int main(){
         i=0;
     
     for(char c:n)
-        for(int i=0;i<10;i++)
-            if(i==c-48)
-                counter[i]++;
+        counter[c-48]++;
 
     for(int i =0;i<10;i++)
         if(counter[i]>0)
