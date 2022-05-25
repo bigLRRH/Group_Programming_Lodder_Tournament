@@ -7,10 +7,9 @@ int main()
 {
     int a,b;
     cin>>a>>b;
-    int sum=0,cnt=0;
+    int sum((a+b)*(b-a+1)/2),cnt(0);//等差数列求和公式
     for(int i=a;i<=b;i++)
     {
-        sum+=i;
         printf("%5d",i);
         cnt++;
         if(cnt==5){

@@ -1,20 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int fact(int x);
-
 int main(){
     int n;cin>>n;
-    int sum=0;
+    int sum(0),tmp(1);
     for(int i=1;i<=n;i++)
-        sum+=fact(i);
+    {
+        tmp*=i;
+        sum+=tmp;
+    }
     cout<<sum<<endl;
     
     return 0;
-}
-
-int fact(int x){
-    if(x==0)return 1;
-    else
-        return x*fact(x-1);
 }

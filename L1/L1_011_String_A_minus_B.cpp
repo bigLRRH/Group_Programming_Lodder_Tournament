@@ -6,15 +6,14 @@ using namespace std;
 int main()
 {
     string a,b;
-    int c[128] = {0},i;
+    int asc[128]({0});//ascii码标记表
     getline(cin,a);
     getline(cin,b);
-    for(i=0;i<b.size();i++)
-        c[b[i]]++;
-    for(i=0;i<a.size();i++)
-        if(c[a[i]]==0)
-            cout<<a[i];
-    
+    for(char c:b)
+        asc[c]++;
+    for(char c:a)
+        if(!asc[c])
+            cout<<c;
     cout<<endl;
     return 0;
 }
