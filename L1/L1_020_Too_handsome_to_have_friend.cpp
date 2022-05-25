@@ -6,7 +6,6 @@ int main()
     bool is_ugly[100000]={0};//一定要初始化！！！想了一个小时。。。
     int N,K,M,tmp;
     cin>>N;
-    int i;
     for(int i=0;i<N;i++)
     {
         cin>>K;
