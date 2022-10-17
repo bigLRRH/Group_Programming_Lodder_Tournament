@@ -1,30 +1,32 @@
-#include <iostream>
-#include <cstdio>
-#include <stack>
+#include<iostream>
+#include<cstdio>
+#include<stack>
 using namespace std;
-
 int main()
 {
-	int N, n(0), M, K, k(0), pusher[1000], branch[5];
+	int N, pusher[1000], n(0),
+		M,
+		K, branch[5], k;
 	stack<int> box;
 	cin >> N >> M >> K;
-	for (int i = 0; i < N; i++)cin >> pusher[i];
-	while (n<N||!box.empty())
+	for (int i = 0; i < N; i++)
+		cin >> pusher[i];
+	while (1)
 	{
 		k = 0;
-		if (!box.empty())
+		if (box.size())
 		{
 			branch[k] = box.top();
 			box.pop();
 		}
+		else if (n < N)
+			branch[k] = pusher[n++];
 		else
-		{
-			branch[k] = pusher[n++];	
-		}
+			break;
 		k++;
 		while (k < K)
 		{
-			if (!box.empty())
+			if (box.size())
 			{
 				if (box.top() <= branch[k - 1])
 				{
@@ -43,25 +45,22 @@ int main()
 				else
 					break;
 			}
-			else
+			else if (n < N)
 			{
-				if (n < N)
-				{
-					if (pusher[n] <= branch[k - 1])
-						branch[k++] = pusher[n++];
-					else if (box.size() < M)
-						box.push(pusher[n++]);
-					else
-						break;
-				}
+				if (pusher[n] <= branch[k - 1])
+					branch[k++] = pusher[n++];
+				else if (box.size() < M)
+					box.push(pusher[n++]);
 				else
 					break;
 			}
+			else
+				break;
 		}
-		cout << branch[0];
+        cout << branch[0];
 		for (int i = 1; i < k; i++)
 			printf(" %d", branch[i]);
 		cout << endl;
 	}
-	return 0;
+    return 0;
 }
