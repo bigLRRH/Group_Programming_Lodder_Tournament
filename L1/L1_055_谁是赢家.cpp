@@ -7,7 +7,7 @@
 using namespace std;
 int main()
 {
-    int p1[2], p2[2], P1, P2;
+    int p1[2] = {0}, p2[2] = {0}, P1, P2;
     string x;
     cin >> p1[a] >> p1[b];
     for (int i = 0; i < 3; i++)
@@ -58,5 +58,5 @@ int main()
             }
         }
     }
-    printf("The winner is %s: %d + %d",x[0],P1,P2);
+    printf("The winner is %s: %d + %d", &x[0], P1, P2);
 }
