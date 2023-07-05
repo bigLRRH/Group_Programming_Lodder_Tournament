@@ -5,6 +5,7 @@
         "iosfwd": "cpp",
         "array": "cpp",
         "utility": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "string_view": "cpp"
     }
 }
