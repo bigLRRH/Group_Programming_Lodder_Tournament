@@ -15,7 +15,7 @@ int main()
         if (Ti == 0)
         {   // 选中行
             // c++20: if(!rows_selected.contains(Ci))
-            if (rows_selected.count(Ci) == 0)
+            if(!rows_selected.contains(Ci))
             {
                 rows_selected.insert(Ci);
                 --N;
@@ -24,7 +24,7 @@ int main()
         else
         {   // 选中列
             // c++20: if(!cols_selected.contains(Ci))
-            if (cols_selected.count(Ci) == 0)
+            if(!cols_selected.contains(Ci))
             {
                 cols_selected.insert(Ci);
                 --M;
