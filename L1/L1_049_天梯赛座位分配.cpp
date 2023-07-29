@@ -1,22 +1,28 @@
 #include <iostream>
-#include <cstdio>
+#include <vector>
 using namespace std;
 int main()
 {
-    int N,
-        school_teams[101]={0},cnt_number[11]={0},
-        seat,offset;
-    
-    cin>>N;
-    for(int i=1;i<=N;i++)
+    int N;                           // 参赛的高校数
+    vector<int> school_teams;        // 高校的参赛队伍数
+    vector<vector<int>> seat_number; // 座位号
+    school_teams.reserve(N);
+    seat_number.reserve(N);
+    for (int i = 0; i < N; ++i)
     {
-        cin>>school_teams[i];
-        cnt_number[school_teams[i]]++;
+        cin >> school_teams[i]; // 第i所高校的参赛队伍数
+        seat_number[i].reserve(school_teams[i]);
     }
-
-    for(int i=1;i<=N;i++)
-    {
-        printf("#%d\n",N);
-        offset = N;       
-        for(int j  = 0;j < m[i] ; j++)
+    while (
+        [=]
         {
+            for (int i = 0; i < N; ++i)
+            {
+                if (school_teams[i] != 0)
+                    return true;
+            }
+            return false;
+        })
+    {
+    }
+}
